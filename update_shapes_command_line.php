@@ -167,6 +167,8 @@ $new_row = array();
 
 foreach ($sorted_shape_data_array as $row_value) {
 
+	if ($last_shape_id != $row_value['shape_id'] || $last_shape_sequence != $row_value['shape_pt_sequence']) {
+
 	if ($last_shape_id != $row_value['shape_id']) {
 		$new_shape_pt_sequence = 0;
 		}
@@ -353,7 +355,11 @@ foreach ($sorted_shape_data_array as $row_value) {
 
 
 // set up $last_row array
+
+	}
+	
 	$last_shape_id = $row_value['shape_id'];
+	$last_shape_sequence = $row_value['shape_pt_sequence'];
 	
 	$i++;
 	}
